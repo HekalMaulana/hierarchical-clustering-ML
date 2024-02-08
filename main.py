@@ -12,3 +12,10 @@ plt.title("Dendogram")
 plt.xlabel("Customers")
 plt.ylabel("Euclidean distance")
 plt.show()
+
+ideal_n_cluster = 5
+
+# Training the hierarchical clustering model
+from sklearn.cluster import AgglomerativeClustering
+hc = AgglomerativeClustering( n_clusters= ideal_n_cluster, affinity='euclidean', linkage='ward')
+y_hc = hc.fit_predict(X)
